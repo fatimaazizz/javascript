@@ -1,0 +1,233 @@
+<html>
+	<head>
+	
+	</head>
+	<body style="align:center">
+		<div style="border-radius:50%;width:360px;height:360px; border-width:10px ; border-color:blue;border-style: solid;padding:5px;margin: auto; position:relative;">
+			<!--secomds arm  -->
+			<div style="left:175px;top:5px; position:absolute;">12</div>
+			<div style="left:179px;top:350px; position:absolute;">6</div>
+			<div style="left:355px;top:180px; position:absolute;">3</div>
+			<div style="left:5px;top:180px; position:absolute;">9</div>
+			 <div id="second" style="width:170px;height:5px; position:absolute;  background-color:black;top:185px;left:15px ; transform: rotate(90deg);transform-origin:bottom right;">
+			 </div>
+			<!--minute arm  -->
+			 <div id="minute" style="width:90px;height:5px; position:absolute;  background-color:green; top:185px;  transform: rotate(90deg);transform-origin: bottom right; left: 90px;">
+			 </div>
+			 <!--hour arm  -->
+			  <div id="hour" style="width:60px;height:5px; position:absolute;  background-color:red; top:185px;  transform: rotate(90deg);transform-origin: bottom right; left: 120px;">
+			 </div>
+			 
+			 <div style="border-radius:50%;width:15px;height:15px;background-color:blue; position:absolute;top:180px;left:175px">
+			</div>
+		<div>
+		<script>
+		
+		var date=new Date();// gets current date 
+		var hr =date.getHours(); // => hour on load
+        var min=date.getMinutes(); // =>  min
+        var sec=date.getSeconds(); // => seconds
+	
+		selectsec();//set seconds arm postion
+		selectmin();//set seconds arm postion
+		selecthour();//set seconds arm postion
+		setInterval(secondpinmove, 1000);//move second arm contionously
+		//set function second
+		function selectsec()
+		{var secondpin=document.getElementById("second");
+		 var angle=sec*6+90;
+		 
+		 if((angle>=30 && angle<120  )||(angle>=390 && angle<450))
+		 {secondpin.style.top="185px";
+		  secondpin.style.left="10px";
+		 }
+		 else if(angle>=120 && angle<210   )
+		 {secondpin.style.left="10px";
+		  secondpin.style.top="180px";
+		 }
+		  else if((angle>=300 && angle>360)||(angle>=0 && angle<30)||(angle>=360 && angle<390))
+		 {secondpin.style.top="185px";
+		  secondpin.style.left="15px";
+		 }
+		 else if(angle>=210&& angle<300 )
+		 {secondpin.style.left="15px";
+		 secondpin.style.top="180px";
+		 }
+		 if(angle>180 && angle<=359)
+		 {angle=-360+angle;}
+		 else if(angle>=360 && angle<=450)
+		 {angle=angle-360;}
+		   
+		 secondpin.style.transform=`rotate(${angle}deg)`;
+		 
+		}
+		//set function minute
+		function selectmin()
+		{var minpin=document.getElementById("minute");
+		 var angle=min*6+90;
+		 if((angle>=30 && angle<120  )||(angle>=390 && angle<450))
+		 {minpin.style.top="185px";
+		  minpin.style.left="90px";
+		 }
+		 else if(angle>=120 && angle<210   )
+		 {minpin.style.left="90px";
+		  minpin.style.top="180px";
+		 }
+		  else if((angle>=300 && angle>360)||(angle>=0 && angle<30)||(angle>=360 && angle<390))
+		 {minpin.style.top="185px";
+		  minpin.style.left="95px";
+		 }
+		 else if(angle>=210&& angle<300 )
+		 {minpin.style.left="95px";
+		 minpin.style.top="180px";
+		 }
+		 if(angle>180 && angle<=359)
+		 {angle=-360+angle;}
+		 else if(angle>=360 && angle<=450)
+		 {angle=angle-360;}
+		  
+		 minpin.style.transform=`rotate(${angle}deg)`;
+		 
+		}
+			//set function hour
+		function selecthour()
+		{var hourpin=document.getElementById("hour");
+		if(hr>12)
+		{hr=hr-12;}
+		 var angle=hr*30+90;
+		 
+		 if((angle>=30 && angle<120  )||(angle>=390 && angle<450))
+		 {hourpin.style.top="185px";
+		  hourpin.style.left="120px";
+		 }
+		 else if(angle>=120 && angle<210   )
+		 {hourpin.style.left="120px";
+		  hourpin.style.top="180px";
+		 }
+		  else if((angle>=300 && angle>360)||(angle>=0 && angle<30)||(angle>=360 && angle<390))
+		 {hourpin.style.top="185px";
+		  hourpin.style.left="125px";
+		 }
+		 else if(angle>=210&& angle<300 )
+		 {hourpin.style.left="125px";
+		 hourpin.style.top="180px";
+		 }
+		 
+		 if(angle>180 && angle<=359)
+		 {angle=-360+angle;}
+		 else if(angle>=360 && angle<=450)
+		 {angle=angle-360;}
+		 
+		 
+		 hourpin.style.transform=`rotate(${angle}deg)`;
+		 
+		}
+		//function tgo get the currnet angle of any arm
+		function getAngleofEle(ele)
+		{var st=window.getComputedStyle(ele, null);
+		 var td= st.getPropertyValue("-webkit-transform") ||
+         st.getPropertyValue("-moz-transform") ||
+         st.getPropertyValue("-ms-transform") ||
+         st.getPropertyValue("-o-transform") ||
+         st.getPropertyValue("transform");
+		// console.log(td);
+		 var values = td.split('(')[1];
+			 values = values.split(')')[0];
+			 values = values.split(',');
+		var a = values[0];
+		var b = values[1];
+		var c = values[2];
+		var d = values[3];
+
+       var scale = Math.sqrt(a*a + b*b);
+
+       
+       var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+      
+		return angle;
+		
+		}
+		function secondpinmove()
+		{var secondpin=document.getElementById("second");
+		 //console.log(secondpin);
+		 var curAngle=getAngleofEle(secondpin)+6;
+		 if((curAngle>=120 && curAngle<=180)||(curAngle<=-160 && curAngle>-180 ))
+		 {secondpin.style.top="180px";
+		  secondpin.style.left="10px";
+		 }
+		
+		  else if(curAngle<=-30 && curAngle>-160)
+		 {secondpin.style.top="180px";
+		  secondpin.style.left="15px";
+		  
+		 }
+		 else if ((curAngle<=30 && curAngle>0)||(curAngle>-30 && curAngle<=0 ))
+		 {secondpin.style.left="15px";
+		  secondpin.style.top="185px";
+		 }
+		 else if (curAngle>=30 && curAngle<120)
+		 {secondpin.style.left="10px";
+		  secondpin.style.top="185px";
+		 }
+		
+		 secondpin.style.transform=`rotate(${curAngle}deg)`;
+		 if(curAngle==90)
+		 {minutedpinmove();}
+		 
+		}
+		function minutedpinmove()
+		{var minutepin=document.getElementById("minute");
+		 //console.log(minAngle);
+		 var curAngle=getAngleofEle(minutepin)+6;
+		 
+		 if((curAngle>=120 && curAngle<=180)||(curAngle<=-160 && curAngle>-180 ))
+		 {minutepin.style.top="180px";
+		  minutepin.style.left="90px";
+		 }
+		
+		  else if(curAngle<=-30 && curAngle>-160)
+		 {minutepin.style.top="180px";
+		  minutepin.style.left="95px";
+		  
+		 }
+		 else if ((curAngle<=30 && curAngle>0)||(curAngle>-30 && curAngle<=0 ))
+		 {minutepin.style.left="95px";
+		  minutepin.style.top="185px";
+		 }
+		 else if (curAngle>=30 && curAngle<120)
+		 {minutepin.style.left="90px";
+		  minutepin.style.top="185px";
+		 }
+		 
+		 minutepin.style.transform=`rotate(${curAngle}deg)`;
+		 hourpinmove();
+		
+		 }
+		 function hourpinmove()
+		{var hourpin=document.getElementById("hour");
+		 //console.log(minAngle);//a round clock contain 360 degree and 12 hours 1 hour take 360/12 degree;in  60 min hourarm moves 30 degree than in 1 min it moves .5 degree 
+		 var curAngle=getAngleofEle(hourpin)+0.5;
+		 
+		 if((curAngle>=120 && curAngle<=180)||(curAngle<=-160 && curAngle>-180 ))
+		 {hourpin.style.top="180px";
+		  hourpin.style.left="120px";
+		 }
+		
+		  else if(curAngle<=-30 && curAngle>-160)
+		 {hourpin.style.top="180px";
+		  hourpin.style.left="125px";
+		  
+		 }
+		 else if ((curAngle<=30 && curAngle>0)||(curAngle>-30 && curAngle<=0 ))
+		 {hourpin.style.left="125px";
+		  hourpin.style.top="185px";
+		 }
+		 else if (curAngle>=30 && curAngle<120)
+		 {hourpin.style.left="120px";
+		  hourpin.style.top="185px";
+		 }
+		 hourpin.style.transform=`rotate(${curAngle}deg)`;}
+		</script>
+		
+	</body>
+</html>
