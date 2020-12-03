@@ -3,9 +3,12 @@ Concept used
 CSS=>
 
 left ,top, border-radius,border-style
-position:absolute //is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
+
+position:absolute //is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).                                           
 position:relative //is positioned relative to its normal position.
+
 transform:rotate(deg)
+
 transform-origin:bottom right;x,y  rotated element's base placement
 
 Javascript=>
