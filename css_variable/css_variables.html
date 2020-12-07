@@ -1,0 +1,61 @@
+<!DOCTYPE Html>
+<html>
+    <head>
+		<title>Css variables</title>
+	</head>
+	<body>
+		<h2>Change css properties with <span class='hl'>JS</span></h2>
+		<div class="control">
+			<label for="spacing">Spacing</label>
+			<input id="spacing" type="range" name="spacing" max="150" min="10"  value="10" data-sizzing="px">
+			<label for="blur">blur</label>
+			<input id="blur" type="range" name="blur"  max="25" min="0" value="10"  data-sizzing="px">
+			<label for="Color"> Color</label>
+			<input id="color" type="color"   name="color"  value="#ffc600">
+			<label for="rotating">Rotate Angle</label>
+			<input id="rotating" type="range"  name="rotating" max="360" min="0" value="10"  data-sizzing="deg">
+		</div>
+		
+		<img src="https://source.unsplash.com/7bwQXzbF6KE/800x500"> 
+		<style>
+			:root{
+			 --color:red;
+			 --spacing:10px;
+			 --blur:20px;
+			 --rotating:10deg;
+			}
+			img{
+			  padding:var(--spacing);
+			  background:var(--color);
+			  filter:blur(var(--blur));
+			  transform:rotate(var(--rotating));
+			}
+			 body {
+			  text-align: center;
+			  background: #193549;
+			  color: white;
+			  font-family: 'helvetica neue', sans-serif;
+			  font-weight: 100;
+			  font-size: 50px;
+			}
+
+			.control {
+			  margin-bottom:250px;
+			}
+			</style>	
+			<script>
+				const inputs = document.querySelectorAll('.control input');
+                 console.log(inputs);
+				function handleUpdate() {
+					console.log(this.name);
+					console.log(this.value);
+				  const suffix = this.dataset.sizzing || '';
+				  document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+				}
+
+				inputs.forEach(input => input.addEventListener('change', handleUpdate));
+				inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+			 </script>
+        	
+	</body>
+</html>
