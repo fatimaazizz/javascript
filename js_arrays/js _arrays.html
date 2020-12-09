@@ -1,0 +1,84 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>js arrays</title>
+	</head>
+	<style>
+	  span
+	  {
+	   color:blue;
+	   font-weight:bold;
+	  }
+	</style>
+	<body>
+	<h1>original array</h1>
+	    <p id="orginal_array">
+		 
+		</p>
+		<h1>Map function copy all element according to defined function in it</h1>
+	    <p id="mapp">
+		 
+		</p>
+		
+		<h1>Sort function sort all element according to defined function in it</h1>
+		<div id="sortt">
+		</div>
+		<h1>by using foreach  we can get access each value of arraya and is successors</h1>
+		<div id="iter">
+		</div>
+		<h1>Prople started work after 2013 used filter function</h1>
+		<div id="filter">
+		</div>
+		<script>
+		
+		    const developers=[ {Name:"Fatima Aziz",Designation:"Assitant FED",Joning_date:"02-12-2020",joining_year:"2020"},
+							   {Name:"Fawad Allam",Designation: "FED",Joning_date:"02-11-2020",joining_year:"2020"},
+							   {Name:"Fatima Aziz",Designation: "FED",Joning_date:"02-11-2020",joining_year:"2020"},
+							   {Name:"Azlan Saeed",Designation: "Sr. FED",Joning_date:"02-11-2016",joining_year:"2016"},
+							   {Name:"Ameer Muhammad",Designation: "Pr. FED",Joning_date:"02-11-2013",joining_year:"2013"},
+							   {Name:"Rehman Ali",Designation: "designer",Joning_date:"02-11-2019",joining_year:"2019"}
+							];
+							
+			//display array of objects Json.srtingify				
+			document.getElementById("orginal_array").innerHTML= JSON.stringify(developers);
+			document.getElementById("orginal_array").innerHTML= developers.map(o => `${Object.values(o)}<br>`);
+			
+			
+			//.map create an array of samsize and apply a function which is given inside it.
+			const developers_name=developers.map(o =>  `${o.Name},${o.Joning_date}`);
+		    console.log(developers_name);
+			document.getElementById("mapp").innerHTML=developers_name;
+			
+			/*.sort array accord
+			sort work for strings for number compare has to be done
+			If the result is negative a is sorted before b.
+            If the result is positive b is sorted before a.
+            If the result is 0 no changes are done with the sort order of the two values.
+			*/
+			
+			const developer_sort=developers.sort((a,b)=>a.Name<=b.Name?-1:1);
+		    console.log(developer_sort);
+			const developers_sname=developer_sort.map(o =>  `${o.Name}`);
+			document.getElementById("sortt").innerHTML=developers_sname;
+			
+			//iteration
+			var txt="";
+			developer_sort.forEach(myFunction);
+			document.getElementById("iter").innerHTML = "Displaying sorted array accorging to Name "+"<br><br>"+txt;
+           
+		   function myFunction(value, index, array) {
+            txt = txt +"<span>Name:</span> "+ value.Name+" ,<span> Designation:</span> "+value.Designation+" , <span>Joning_date:</span> " +value.Joning_date+"<br><br>";
+           }
+			//filter
+			const started_2013=developers.filter(object=>object.joining_year>"2013")
+			console.log(started_2013);
+			txt="";
+			started_2013.forEach(myFunction);
+			document.getElementById("filter").innerHTML = txt;
+
+			const years_working=developers.reduce((total,obj)=>{return total+(2020-parseInt(obj.joining_year))},0);
+			console.log(years_working);
+		</script>
+	</body>
+	
+</html>
