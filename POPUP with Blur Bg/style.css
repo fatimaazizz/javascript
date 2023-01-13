@@ -1,0 +1,114 @@
+body{
+    margin:0;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background: url(https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=1600);
+    background-size: cover;
+    transition: fiter .7s;
+}
+.container .heading{
+font-size: 100px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-weight: 900;
+color: rgb(229, 67, 224);
+text-align: center;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+
+}
+.btn{
+    font-size:30px;
+    padding: 10px 20px;
+    color:white;
+    background-color:rgb(229, 67, 224) ;
+    border:none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.btn:hover{
+    background-color: blueviolet;
+}
+.container.blur{
+    filter: blur(8px) brightness(0.5);
+}
+.popup-container
+{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 550px;
+    visibility: hidden;
+    transition: opacity .7s;
+    opacity: 0;
+}
+.popup-container.active{
+    visibility: visible;
+    opacity: 1;
+}
+h3,h2,label{
+    color:rgb(229, 67, 224) ;
+}
+h2{
+    font-size: 40px;
+    margin: 20px 0;
+}
+h3
+{
+    margin:0 ;
+}
+label{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px ;
+    border:1px solid rgb(229, 67, 224);
+    border-radius: 5px;
+    font-size: 30px;
+}
+input::placeholder{
+    color:rgb(239, 153, 237);
+}
+.join
+{   margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px ;
+    background-color: rgb(229, 67, 224);
+    border:none;
+    border-radius: 5px;
+    color:white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.close-btn{
+position: absolute;
+top:20px;
+right:20px;
+color:rgb(229, 67, 224);
+}
+.join:hover{
+    background-color: blueviolet;
+}
+.close-btn:hover{
+    color: blueviolet;
+    cursor: pointer;
+}
+@media (max-width:746px) {
+    .popup-container{
+        width: 80%;
+    }
+}
