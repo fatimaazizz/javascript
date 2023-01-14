@@ -6,5 +6,6 @@ window.addEventListener("scroll",()=>
 })
 function updateImage(){
     image.style.opacity=1 - window.pageYOffset/900;
+    image.style.transform='scale('+(1+window.pageYOffset/1000)+')';
 
 }
