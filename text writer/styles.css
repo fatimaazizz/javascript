@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+
+body{
+    display:flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: cadetblue;
+    font-family: 'Henny Penny', cursive;
+}
+h1{
+    font-size: 70px;
+    color:white;
+}
