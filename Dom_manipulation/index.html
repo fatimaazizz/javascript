@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <button id="toggle" collapsed="false"  class="btn"><<</button>
+        <nav>
+            <ul class="nav">
+                <li class="list-item"><button class="btn main_nav_btn active">Home</button></li>
+                <li class="list-item"><button class="btn main_nav_btn">About</button></li>
+                <li class="list-item"><button class="btn main_nav_btn">Contact us</button></li>
+            </ul>
+        </nav> 
+        <button id="theme" theme="Light" class="btn">To Dark</button>
+
+    </header>
+    <div class="body-content">
+        <aside class="Main-aside" id="Main-aside">
+            <nav class="sidebar">
+                <ul class="sidebar-nav" id="sidebar_ul">
+                    
+                </ul>
+            </nav>
+        </aside>
+        <main class="Main-content" id="Main-content">
+            <div class="main_content_tab home active"> 
+                <h1>Home</h1>
+                <p>This is a small project based on simple dome manipulation</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A earum qui, repudiandae veritatis illum fugit quos, ea sed similique, accusantium impedit dolore quis sit perspiciatis. Error nostrum ea voluptatem quidem.</p>
+            </div>
+            <p class="main_content_tab about"> About</p>
+            <p class="main_content_tab contact_us"> Contact Us</p>
+        </main>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

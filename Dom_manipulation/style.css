@@ -1,0 +1,102 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    --bacground-color:white;
+    --border-color:rgba(68, 66, 66, 0.346);
+    --primary-color:black;
+    --primary-color-active:red;
+    background: var(--bacground-color);
+    color:var(--primary-color);
+}
+body.dark{
+    --bacground-color:black;
+    --border-color:rgba(144, 141, 141, 0.832);
+    --primary-color:white;
+    --primary-color-active:red;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--bacground-color);
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+.btn{
+    padding: 10px;
+    background:var(--bacground-color);
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid var( --border-color);
+    color:var(--primary-color);
+}
+.nav{
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+.list-item{
+    margin: 0 10px;
+}
+.body-content{
+display: flex;
+flex: 1 0 auto;
+}
+.Main-content{
+    width: 80%;
+    transition: width 5ms;
+    padding: 60px 20px 20px  ;
+}
+.Main-aside{
+    width:20%;
+    height: 100%;
+    max-height: calc( 100vh - 66px);
+    position: sticky;
+    top: 50px;
+    overflow: auto;
+    transition: width 5ms;
+}
+.main_nav_btn.active,.main_nav_btn:hover{
+    color:var(--primary-color-active);
+    border-color: var(--primary-color-active);
+    cursor: pointer;
+}
+.fullscreen{
+    width:100%
+}
+.collapsed{
+    width:0%
+}
+.sidebar-item{
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    align-items: center;
+background-color: var(--bacground-color);
+color:var(--primary-color);
+font-size: 18px;
+border:solid var(--border-color);
+border-width: 0 0 1px 0;
+}
+.sidebar-item.active{
+    background-color: var(--primary-color-active);
+}
+.image_placeholder{
+width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: block;
+    margin-right:10px;
+    border:1px solid var(--border-color);
+}
+.main_content_tab{
+    display: none;
+    text-align: center;
+    font-size: 18px;
+}
+.main_content_tab.active{
+    display: block;
+}
