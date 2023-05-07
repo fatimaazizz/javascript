@@ -1,0 +1,63 @@
+[
+    {
+        "url":"https://fatimaazizz.github.io/javascript/alphabets/index.html",
+        "imgSrc":"Urdu_alphabets.png",
+        "title":"Urdu Alphabet Pronouncation",
+        "disc":"This is a small project which contain all the urdu alphabet and  when you hover it will give its sound."
+    },
+    {
+        "url":"https://fatimaazizz.github.io/javascript/css_variable/css_variables.html",
+        "imgSrc":"css_with_properties.png",
+        "title":"Change css property with js",
+        "disc":"This is a small project in which we can change spacing ,blurness ,rotation and color ."
+    },
+    {
+        "url":"https://fatimaazizz.github.io/javascript/Feedback%20form/index.html",
+        "imgSrc":"feedback_UI.png",
+        "title":"Feedback Uesr Interface",
+        "disc":"This is a small project which contain a small feedback form."
+    },
+    {
+        "url":"https://fatimaazizz.github.io/javascript/img%20slider/index.html",
+        "imgSrc":"image_scroll.png",
+        "title":"Image auto and button scroller in js",
+        "disc":"This is a small project in which image slider auto moves and also moves on click of other elemnts ."
+    },
+    {
+        "url":"https://fatimaazizz.github.io/javascript/toggle%20Mode/index.html",
+        "imgSrc":"mutiply_quiz.png",
+        "title":"Multiply Quiz",
+        "disc":"This is a small project which  in u can play multiply quiz"
+    },
+    {
+        "url":"https://fatimaazizz.github.io/javascript/clock/clock.html",
+        "imgSrc":"Analog_Clock.png",
+        "title":"Analog Clock",
+        "disc":"This is a small project in which we have designed and implements analog with js and css ."
+    },
+    {
+        "url":"https://fatimaazizz.github.io/javascript/real%20time%20character%20counter/index.html",
+        "imgSrc":"real_time_checker.png",
+        "title":"text area with real time checker",
+        "disc":"This is a small project in which wecan write a limmit number of charachters"
+    },
+    {
+        "url":"https://fatimaazizz.github.io/javascript/toggle%20Mode/index.html",
+        "imgSrc":"toggle_theme.png",
+        "title":"Toogle  theme",
+        "disc":"This is a small project which is based on the dark and light theme."
+    }
+    ,
+    {
+        "url":"https://fatimaazizz.github.io/javascript/digital%20clock%20javascript/index.html",
+        "imgSrc":"Digital_clock.png",
+        "title":"Digital",
+        "disc":"This is a small project in which wecan write a limmit number of charachters"
+    },
+    {
+        "url":"https://fatimaazizz.github.io/javascript/css_variable/css_variables.html",
+        "imgSrc":"drum_kit.png",
+        "title":"Drum Kit",
+        "disc":"This is a small project in which can perform a drum sound."
+    }
+]
